@@ -1,0 +1,42 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Szamologep";
+}
+
+<h2>Számológép</h2>
+
+<form method="post">
+    <table>
+        <tr>
+			<td><label for="elso">Első szám:</label></td>
+			<td><button type="submit">Számíts!</button></td>
+			<td><label for="masodik">Második szám:</label></td>
+			<td>
+				@if (!string.Equals(Model.HibaUzenet, ""))
+				{
+					<em>@Model.HibaUzenet</em>
+				}
+			</td>
+        </tr>
+        <tr>
+			<td><input type="number" id="elso" name="elso" required></td>
+			<td>
+				<select id="operator" name="operator">
+					<option value="+">+</option>
+					<option value="-">-</option>
+					<option value="*">*</option>
+					<option value="/">/</option>
+				</select>
+			</td>
+			<td><input type="number" id="masodik" name="masodik" required></td>
+			<td>
+				@if (Model.Eredmeny.HasValue)
+				{
+					<p> = @Model.Eredmeny</p>
+				}
+			</td>
+        </tr>
+	</table>
+</form>
+
