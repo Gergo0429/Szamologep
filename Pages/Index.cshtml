@@ -20,7 +20,7 @@
 			</td>
         </tr>
         <tr>
-			<td><input type="number" id="elso" name="elso" required></td>
+			<td><input type="text" id="Elso" name="Elso" required></td>
 			<td>
 				<select id="operator" name="operator">
 					<option value="+">+</option>
@@ -29,14 +29,12 @@
 					<option value="/">/</option>
 				</select>
 			</td>
-			<td><input type="number" id="masodik" name="masodik" required></td>
-			<td>
-				@if (Model.Eredmeny.HasValue)
-				{
-					<p> = @Model.Eredmeny</p>
-				}
-			</td>
+			<td><input type="text" id="Masodik" name="Masodik" required></td>
         </tr>
 	</table>
+	@if (Model.Eredmeny.HasValue)
+	{
+		<p> = @Model.Eredmeny</p>
+	}
 </form>
 
